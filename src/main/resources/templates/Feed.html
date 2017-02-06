@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Feed</title>
+</head>
+<body>
+<table>
+    <tr>
+        <p th:text="${user.userId}">아이디</p>
+        <td>
+            <div>
+                트윗<br/>
+                <p th:text="${user.userId}">0</p>
+            </div>
+        </td>
+        <td>
+            <div>
+                팔로잉<br/>
+                <p th:text="${user.userId}">0</p>
+            </div>
+        </td>
+        <td>
+            <div>
+                팔로워<br/>
+                <p th:text="${user.userId}">0</p>
+            </div>
+        </td>
+    </tr>
+</table>
+<form method="post" th:action="@{/feed}">
+    <input type="text" placeholder="글을 작성해주세요"/><br/>
+    <input type="submit" value="작성"/>
+</form>
+<hr/>
+
+<div th:each="post : ${posts}">
+    <p th:text="${post.user_id}">user_id</p>
+    <p th:text="${post.content}">content</p>
+</div>
+</body>
+</html>

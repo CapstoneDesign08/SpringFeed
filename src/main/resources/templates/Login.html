@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>로그인</title>
+</head>
+<body>
+<table>
+    <form th:action="@{/login}" method="POST">
+        <tr>
+            <td>
+                <div class="nick container">
+                    <input type="text" name="userId" placeholder="아이디"/>
+                </div>
+            </td>
+            <td>
+                <a th:href="@{'/feed'}">
+                    <input type="submit" value="로그인"/>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="nick container">
+                    <input type="text" name="password" placeholder="비밀번호"/>
+                </div>
+            </td>
+            <td>
+                <a th:href="@{'/join'}">
+                    <input type="button" value="회원가입" class="joinBtn"/>
+                </a>
+            </td>
+        </tr>
+    </form>
+</table>
+</body>
+</html>
