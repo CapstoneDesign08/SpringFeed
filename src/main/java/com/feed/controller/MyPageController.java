@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Controller
@@ -44,6 +46,13 @@ public class MyPageController {
             for(Follow following : follows) {
                 posts.addAll(postRepository.findAllByUserId(following.getFollowing()));
             }
+
+            Collections.sort(posts, new Comparator<Post>() {
+                @Override
+                public int compare(Post o1, Post o2) {
+                    return (int)o2.getId() - (int)o1.getId();
+                }
+            });
 
             modelMap.put("posts", posts);
 
