@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Feed</title>
+    <title>MyPage</title>
 </head>
 <body>
 <div style="float:left">
@@ -33,16 +33,18 @@
             </td>
         </tr>
     </table>
-    <a th:href="@{'/logout'}">
-        <input type="button" value="로그아웃" class="logoutBtn"/>
-    </a>
+    <div>
+        <a th:href="@{'/logout'}">
+            <input type="button" value="로그아웃" class="logoutBtn"/>
+        </a>
+    </div>
+    <div>
+        <a th:href="@{'/feed'}">
+            <input type="button" value="홈으로" class="feedBtn"/>
+        </a>
+    </div>
 </div>
 <div style="float:left">
-    <form method="post" th:action="@{/feed}">
-        <input type="text" name="content" placeholder="글을 작성해주세요"/><br/>
-        <input type="submit" value="작성"/>
-    </form>
-
     <div th:each="post : ${posts}">
         <hr/>
         <a th:href="@{'/' + ${post.userId}}">

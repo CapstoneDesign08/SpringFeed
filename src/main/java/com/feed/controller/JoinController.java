@@ -19,13 +19,19 @@ public class JoinController {
     }
 
     @RequestMapping(value = "/join", method = RequestMethod.POST)
-    public String join(String userId, String password) {
-        User user = new User();
-        user.setUserId(userId);
-        user.setPassword(password);
-        user.setEnabled(false);
+    public String join(User user) {
 
-        userRepository.save(user);
-        return "redirect:/";
+        if(userRepository.exists(user.getUserId())) {
+            // 아이디 중복
+            return "redirect:/join";
+        }
+        else { // 아이디 중복 아님
+            user.setEnabled(false);
+            user.setFollower(0l);
+            user.setFollowing(0l);
+            user.setPosting(0l);
+            userRepository.save(user);
+            return "redirect:/";
+        }
     }
 }

@@ -8,7 +8,10 @@ public class User {
     @Id
     private String userId;
     private String password;
-    private  boolean isEnabled;
+    private boolean isEnabled;
+    private Long posting;
+    private Long following;
+    private Long follower;
 
     public String getUserId() {
         return userId;
@@ -32,5 +35,29 @@ public class User {
 
     public void setEnabled(boolean enabled) {
         isEnabled = enabled;
+    }
+
+    public Long getPosting() {
+        return posting;
+    }
+
+    public void setPosting(Long posting) {
+        this.posting = posting;
+    }
+
+    public Long getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(Long following) {
+        this.following = following;
+    }
+
+    public Long getFollower() {
+        return follower;
+    }
+
+    public void setFollower(Long follower) {
+        this.follower = follower;
     }
 }
