@@ -1,7 +1,9 @@
 package com.feed.controller;
 
+import com.feed.data.FollowRepository;
 import com.feed.data.PostRepository;
 import com.feed.data.UserRepository;
+import com.feed.model.Follow;
 import com.feed.model.Post;
 import com.feed.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +26,9 @@ public class MyPageController {
     @Autowired
     private PostRepository postRepository;
 
+    @Autowired
+    private FollowRepository followRepository;
+
     @RequestMapping(value = "/{userId}")
     public String myPage(@PathVariable String userId, Model model, ModelMap modelMap, HttpServletRequest request) {
 
@@ -34,6 +39,11 @@ public class MyPageController {
             model.addAttribute("user", userRepository.findByUserId(userId));
 
             List<Post> posts = postRepository.findAllByUserId(userId);
+
+            List<Follow> follows = followRepository.findAllByFollower(user.getUserId());
+            for(Follow following : follows) {
+                posts.addAll(postRepository.findAllByUserId(following.getFollowing()));
+            }
 
             modelMap.put("posts", posts);
 

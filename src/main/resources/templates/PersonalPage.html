@@ -44,9 +44,9 @@
         </a>
     </div>
     <div>
-        <a th:href="@{'/follow/{user.userId}'}">
-            <input type="button" value="팔로우" class="followBtn"/>
-        </a>
+        <a th:href="@{'/follow/' + ${user.userId}}">
+        <input type="button" value="팔로우" class="followBtn"/>
+    </a>
     </div>
 </div>
 <div style="float:left">
