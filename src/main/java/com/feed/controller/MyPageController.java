@@ -68,19 +68,4 @@ public class MyPageController {
             return "PersonalPage";
         }
     }
-
-    /*@RequestMapping(value = "/{userId}", method = RequestMethod.POST)
-    public String posting(@PathVariable String userId, Post post) {
-
-        post.setUserId(userId);
-        postRepository.save(post);
-
-        User user = userRepository.findByUserId(userId);
-        long posting = user.getPosting();
-        posting++;
-        user.setPosting(posting);
-        userRepository.save(user);
-
-        return "redirect:/" + userId;
-    }*/
 }

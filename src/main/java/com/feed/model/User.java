@@ -9,9 +9,9 @@ public class User {
     private String userId;
     private String password;
     private boolean isEnabled;
-    private Long posting;
-    private Long following;
-    private Long follower;
+    private long posting;
+    private long following;
+    private long follower;
 
     public String getUserId() {
         return userId;

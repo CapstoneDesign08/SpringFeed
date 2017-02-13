@@ -16,28 +16,23 @@
             <td>
                 <div>
                     포스팅<br/>
-                    <p th:text="${user.posting}">0</p>
+                    <p th:text="${user.posting}" class="personalPostingNo">0</p>
                 </div>
             </td>
             <td>
                 <div>
                     팔로잉<br/>
-                    <p th:text="${user.following}">0</p>
+                    <p th:text="${user.following}" class="personalFollowing">0</p>
                 </div>
             </td>
             <td>
                 <div>
                     팔로워<br/>
-                    <p th:text="${user.follower}">0</p>
+                    <p th:text="${user.follower}" class="personalFollower">0</p>
                 </div>
             </td>
         </tr>
     </table>
-    <div>
-        <a th:href="@{'/logout'}">
-            <input type="button" value="로그아웃" class="logoutBtn"/>
-        </a>
-    </div>
     <div>
         <a th:href="@{'/feed'}">
             <input type="button" value="홈으로" class="feedBtn"/>
@@ -50,7 +45,7 @@
     </div>
 </div>
 <div style="float:left">
-    <div th:each="post : ${posts}">
+    <div th:each="post : ${posts}" class="personalPosting">
         <hr/>
         <a th:href="@{'/' + ${post.userId}}">
             <p th:text="${post.userId}">user_id</p>

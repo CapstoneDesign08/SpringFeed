@@ -21,6 +21,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Properties;
 
@@ -76,27 +77,94 @@ public class LoginTest {
         driver = new PhantomJSDriver(caps);
     }
 
-    @Test // 값을 입력하고 '로그인'을 눌렀을 때 값이 맞는 경우 로그인 확인
-    public void joinTest() throws Exception {
-        String query;
-        try {
-            query = "Insert Into usr(id, password) VALUES ('TEST_ID', 'TEST_PW');";
-            stmt.executeUpdate(query);
-
-            String baseURL = "http://localhost:" + port;
+    @Test // 존재하지않는 아이디 입력시 ErrorPage를 제대로 띄우는가
+    public void loginWrongID() throws Exception{
+        try{
+            String baseURL = "http://localhost:" + port+ "/login";
             driver.get(baseURL);
 
-            driver.findElement(By.name("id")).sendKeys("TEST_ID");
+            driver.findElement(By.name("userId")).sendKeys("TEST_WRONGID");
+            driver.findElement(By.name("password")).sendKeys("TEST_WRONGPW");
+            driver.findElement(By.tagName("form")).submit();
+
+            assertEquals("$에러페이지가 뜨지 않았습니다.$", "Error", driver.getTitle());
+
+        } catch (NoSuchElementException e){
+            throw new NoSuchElementException("$html이 제대로 호출되지 않았습니다.$");
+        }
+    }
+
+    @Test // 틀린 비밀번호 입력시 ErrorPage를 제대로 띄우는가
+    public void loginWrongPW() throws Exception{
+        String query;
+        try{
+            query = "Insert Into user(user_id, following, follower, posting, is_enabled, password) VALUES ('TEST_ID',0,0,0, false ,'TEST_PW');";
+            stmt.executeUpdate(query);
+
+            String baseURL = "http://localhost:" + port+ "/login";
+            driver.get(baseURL);
+
+            driver.findElement(By.name("userId")).sendKeys("TEST_ID");
+            driver.findElement(By.name("password")).sendKeys("TEST_WRONGPW");
+            driver.findElement(By.tagName("form")).submit();
+
+            assertEquals("$에러페이지가 호출되지 않았습니다.$", "Error", driver.getTitle());
+        } catch (NoSuchElementException e){
+            throw new NoSuchElementException("$html이 제대로 호출되지 않았습니다.$");
+        } finally {
+            query = "TRUNCATE TABLE user;";
+            stmt.executeUpdate(query);
+        }
+    }
+
+    @Test // 값을 입력하고 '로그인'을 눌렀을 때 값이 맞는 경우 로그인 확인 isEnabled가 true로 바뀌었는가
+    public void loginTest() throws Exception {
+        String query;
+        try {
+            query = "Insert Into user(user_id, following, follower, posting, is_enabled, password) VALUES ('TEST_ID',0,0,0, false ,'TEST_PW');";
+            stmt.executeUpdate(query);
+
+            String baseURL = "http://localhost:" + port+ "/login";
+            driver.get(baseURL);
+
+            driver.findElement(By.name("userId")).sendKeys("TEST_ID");
             driver.findElement(By.name("password")).sendKeys("TEST_PW");
             driver.findElement(By.tagName("form")).submit();
 
-            assertEquals("주소가 제대로 호출되지 않았습니다.", "http://localhost:" + port + "/feed/", driver.getCurrentUrl());
+            query = "SELECT * FROM user WHERE user_id='TEST_ID';";
+            ResultSet rs = stmt.executeQuery(query);
+
+            rs.next();
+            assertEquals("$isEnable이 true로 바뀌지 않았습니다.$", "1", rs.getString(4));
+            assertEquals("$/feed가 호출되지 않았습니다.$", "http://localhost:" + port + "/feed", driver.getCurrentUrl());
+        } catch (NoSuchElementException e) {
+            throw new NoSuchElementException("$html이 제대로 호출되지 않았습니다.$");
+        } finally {
+            query = "TRUNCATE TABLE user;";
+            stmt.executeUpdate(query);
         }
-        catch (NoSuchElementException e) {
-            throw new NoSuchElementException("html이 제대로 호출되지 않았습니다.");
-        }
-        finally {
-            query = "TRUNCATE TABLE post;";
+    }
+
+    @Test // 이미 로그인되어있는 계정에 중복로그인시 ErrorPage를 제대로 띄우는가
+    public void loginOverlap() throws Exception{
+        String query;
+        try{
+            query = "Insert Into user(user_id, following, follower, posting, is_enabled, password) VALUES ('TEST_ID',0,0,0, true ,'TEST_PW');";
+            stmt.executeUpdate(query);
+
+            String baseURL = "http://localhost:" + port+ "/login";
+            driver.get(baseURL);
+
+            driver.findElement(By.name("userId")).sendKeys("TEST_ID");
+            driver.findElement(By.name("password")).sendKeys("TEST_PW");
+            driver.findElement(By.tagName("form")).submit();
+
+            assertEquals("$에러페이지가 호출되지 않았습니다.$", "Error", driver.getTitle());
+
+        } catch (NoSuchElementException e) {
+            throw new NoSuchElementException("$html이 제대로 호출되지 않았습니다.$");
+        } finally {
+            query = "TRUNCATE TABLE user;";
             stmt.executeUpdate(query);
         }
     }

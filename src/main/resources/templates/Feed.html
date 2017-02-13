@@ -9,14 +9,14 @@
     <table>
         <tr>
             <a th:href="@{'/' + ${user.userId}}">
-                <p th:text="${user.userId}">아이디</p>
+                <p th:text="${user.userId}" class="feedUserId">아이디</p>
             </a>
         </tr>
         <tr>
             <td>
                 <div>
                     포스팅<br/>
-                    <p th:text="${user.posting}">0</p>
+                    <p th:text="${user.posting}" class="feedPostingNo">0</p>
                 </div>
             </td>
             <td>
@@ -43,12 +43,12 @@
         <input type="submit" value="작성"/>
     </form>
 
-    <div th:each="post : ${posts}">
+    <div th:each="post : ${posts}" class="feedPosting">
         <hr/>
         <a th:href="@{'/' + ${post.userId}}">
-            <p th:text="${post.userId}">user_id</p>
+            <p th:text="${post.userId}" class="feedPostingUserId">user_id</p>
         </a>
-        <p th:text="${post.content}">content</p>
+        <p th:text="${post.content}" class="feedPostingContent">content</p>
     </div>
 </div>
 </body>

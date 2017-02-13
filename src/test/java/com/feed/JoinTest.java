@@ -85,10 +85,10 @@ public class JoinTest {
 
             driver.findElement(By.className("joinBtn")).click();
 
-            assertEquals("주소가 제대로 호출되지 않았습니다.", "http://localhost:" + port + "/join", driver.getCurrentUrl());
+            assertEquals("$/join이 호출되지 않았습니다.$", "http://localhost:" + port + "/join", driver.getCurrentUrl());
         }
         catch (NoSuchElementException e) {
-            throw new NoSuchElementException("html이 제대로 호출되지 않았습니다.");
+            throw new NoSuchElementException("$html이 제대로 호출되지 않았습니다.$");
         }
     }
 
@@ -100,10 +100,10 @@ public class JoinTest {
 
             driver.findElement(By.className("joinBackBtn")).click();
 
-            assertEquals("주소가 제대로 호출되지 않았습니다.", "http://localhost:" + port + "/", driver.getCurrentUrl());
+            assertEquals("$/login이 호출되지 않았습니다.$", "http://localhost:" + port + "/login", driver.getCurrentUrl());
         }
         catch (NoSuchElementException e) {
-            throw new NoSuchElementException("html이 제대로 호출되지 않았습니다.");
+            throw new NoSuchElementException("$html이 제대로 호출되지 않았습니다.$");
         }
     }
 
@@ -114,46 +114,70 @@ public class JoinTest {
             String baseURL = "http://localhost:" + port + "/join";
             driver.get(baseURL);
 
-            driver.findElement(By.name("id")).sendKeys("TEST_ID");
+            driver.findElement(By.name("userId")).sendKeys("TEST_ID");
             driver.findElement(By.name("password")).sendKeys("TEST_PW");
             driver.findElement(By.tagName("form")).submit();
 
-            assertEquals("주소가 제대로 호출되지 않았습니다.", "http://localhost:" + port + "/", driver.getCurrentUrl());
-        }
-        catch (NoSuchElementException e) {
-            throw new NoSuchElementException("html이 제대로 호출되지 않았습니다.");
-        }
-        finally {
-            query = "TRUNCATE TABLE post;";
+            assertEquals("$주소가 제대로 호출되지 않았습니다.$", "http://localhost:" + port + "/login", driver.getCurrentUrl());
+        } catch (NoSuchElementException e) {
+            throw new NoSuchElementException("$html이 제대로 호출되지 않았습니다.$");
+        } finally {
+            query = "TRUNCATE TABLE user;";
             stmt.executeUpdate(query);
         }
     }
 
-    @Test // 값을 입력하고 '가입하기'를 눌렀을 때 DB의 값을 확인
+    @Test //값을 입력하고 '가입하기'를 눌렀을 때 DB의 값을 확인
     public void joinDBTest() throws Exception {
         String query;
         try {
             String baseURL = "http://localhost:" + port + "/join";
             driver.get(baseURL);
 
-            driver.findElement(By.name("id")).sendKeys("TEST_ID");
+            driver.findElement(By.name("userId")).sendKeys("TEST_ID");
             driver.findElement(By.name("password")).sendKeys("TEST_PW");
             driver.findElement(By.tagName("form")).submit();
 
-            query = "SELECT * FROM usr WHERE id='TEST_ID';";
+            query = "SELECT * FROM user WHERE user_id='TEST_ID';";
             ResultSet rs = stmt.executeQuery(query);
 
             rs.next();
-            String test_id = rs.getString(1);
-            String test_ps = rs.getString(2);
-            assertEquals("DB에 아이디가 제대로 들어가지 않았습니다.", "TEST_ID", test_id);
-            assertEquals("DB에 패스워드가 제대로 들어가지 않았습니다.", "TEST_PW", test_ps);
+            assertEquals("$DB의 userId가 일치하지 않습니다.$", "TEST_ID", rs.getString(1));
+            assertEquals("$DB의 follower의 초기값을 0으로 해주세요.$", "0", rs.getString(2));
+            assertEquals("$DB의 following의 초기값을 0으로 해주세요.$", "0", rs.getString(3));
+            assertEquals("$DB의 isEnabled의 초기값을 false로 해주세요.$", "0", rs.getString(4));
+            assertEquals("$DB의 패스워드가 제대로 들어가지 않았습니다.$", "TEST_PW", rs.getString(5));
+            assertEquals("$DB의 posting의 초기값을 0으로 해주세요.$", "0", rs.getString(6));
+
+        } catch (NoSuchElementException e) {
+            throw new NoSuchElementException("$html이 제대로 호출되지 않았습니다.$");
+        } finally {
+            query = "TRUNCATE TABLE user;";
+            stmt.executeUpdate(query);
+        }
+    }
+
+    @Test //아이디 중복시 에러페이지가 뜨는가
+    public void joinOverlap() throws Exception {
+        String query;
+        try {
+            query = "Insert Into user(user_id, follower, following, is_enabled, password, posting) VALUES ('TEST_ID', 0, 0, false, 'TEST_PW', 0);";
+            stmt.executeUpdate(query);
+
+            String baseURL = "http://localhost:" + port + "/join";
+            driver.get(baseURL);
+
+            driver.findElement(By.name("userId")).sendKeys("TEST_ID");
+            driver.findElement(By.name("password")).sendKeys("TEST_PW");
+            driver.findElement(By.tagName("form")).submit();
+
+            assertEquals("$에러페이지가 호출되지 않았습니다.$", "Error", driver.getTitle());
         }
         catch (NoSuchElementException e) {
-            throw new NoSuchElementException("html이 제대로 호출되지 않았습니다.");
+            throw new NoSuchElementException("$html이 제대로 호출되지 않았습니다.$");
         }
         finally {
-            query = "TRUNCATE TABLE post;";
+            query = "TRUNCATE TABLE user;";
             stmt.executeUpdate(query);
         }
     }

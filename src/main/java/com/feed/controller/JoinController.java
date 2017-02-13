@@ -21,17 +21,22 @@ public class JoinController {
     @RequestMapping(value = "/join", method = RequestMethod.POST)
     public String join(User user) {
 
-        if(userRepository.exists(user.getUserId())) {
-            // 아이디 중복
-            return "redirect:/join";
+        if(user.getUserId() != "" && user.getPassword() != ""){
+            if(userRepository.exists(user.getUserId())) {
+                // 아이디 중복
+                return "ErrorPage";
+            }
+            else { // 아이디 중복 아님
+                user.setEnabled(false);
+                user.setFollower(0l);
+                user.setFollowing(0l);
+                user.setPosting(0l);
+                userRepository.save(user);
+                return "redirect:/";
+            }
         }
-        else { // 아이디 중복 아님
-            user.setEnabled(false);
-            user.setFollower(0l);
-            user.setFollowing(0l);
-            user.setPosting(0l);
-            userRepository.save(user);
-            return "redirect:/";
+        else{
+            return "ErrorPage";
         }
     }
 }

@@ -9,26 +9,26 @@
     <table>
         <tr>
             <a th:href="@{'/' + ${user.userId}}">
-                <p th:text="${user.userId}">아이디</p>
+                <p th:text="${user.userId}" class="myPageUserId">아이디</p>
             </a>
         </tr>
         <tr>
             <td>
                 <div>
                     포스팅<br/>
-                    <p th:text="${user.posting}">0</p>
+                    <p th:text="${user.posting}" class="myPagePostingNo">0</p>
                 </div>
             </td>
             <td>
                 <div>
                     팔로잉<br/>
-                    <p th:text="${user.following}">0</p>
+                    <p th:text="${user.following}" class="myPageFollowing">0</p>
                 </div>
             </td>
             <td>
                 <div>
                     팔로워<br/>
-                    <p th:text="${user.follower}">0</p>
+                    <p th:text="${user.follower}" class="myPageFollower">0</p>
                 </div>
             </td>
         </tr>
@@ -45,10 +45,10 @@
     </div>
 </div>
 <div style="float:left">
-    <div th:each="post : ${posts}">
+    <div th:each="post : ${posts}" class="myPagePosting">
         <hr/>
         <a th:href="@{'/' + ${post.userId}}">
-            <p th:text="${post.userId}">user_id</p>
+            <p th:text="${post.userId}" class="myPagePostingUserId">user_id</p>
         </a>
         <p th:text="${post.content}">content</p>
     </div>

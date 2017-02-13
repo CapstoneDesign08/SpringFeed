@@ -23,32 +23,38 @@ public class LoginController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(String userId, String password, HttpSession session) {
-        User user = userRepository.findByUserId(userId);
 
-        if(user.equals(user.getUserId())) {
-            return "redirect:/login";
-        }
-        if(!password.equals(user.getPassword())) {
-            return "redirect:/login";
-        }
-        if(user.isEnabled()) {
-            return "redirect:/login";
-        }
+        User user;
+        try {
+            user = userRepository.findByUserId(userId);
 
-        session.setAttribute("sessionUser", user);
-        return "redirect:/feed";
+            if (!password.equals(user.getPassword())) {
+                return "ErrorPage";
+            }
+            if (user.isEnabled()) {
+                return "ErrorPage";
+            }
+
+            session.setAttribute("sessionUser", user);
+            return "redirect:/feed";
+
+        } catch (Exception e) {
+            return "ErrorPage";
+        }
     }
 
     @RequestMapping(value = "/logout")
     public String logout(HttpServletRequest request) {
         HttpSession session = request.getSession();
-        User user = (User)session.getAttribute("sessionUser");
+        User user = (User) session.getAttribute("sessionUser");
 
         user.setEnabled(false);
         userRepository.save(user);
 
+        session.removeAttribute("sessionUser");
+
         return "redirect:/login";
     }
 
-    
+
 }
