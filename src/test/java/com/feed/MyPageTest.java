@@ -244,7 +244,7 @@ public class MyPageTest {
             driver.get(baseURL);
 
             List<WebElement> div = driver.findElements(By.className("myPagePosting"));
-            assertEquals("$내 포스트와 팔로잉 중인 포스트가 모두 뜨지 않았습니다.$", 4, div.size());
+            assertEquals("$내 포스트와 팔로잉 중인 포스트가 제대로 뜨지 않았습니다.$", 4, div.size());
 
             WebElement p = driver.findElement(By.className("myPagePostingNo"));
             assertEquals("$포스팅 수가 맞지 않습니다.$", "1", p.getText());

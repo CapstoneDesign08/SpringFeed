@@ -31,9 +31,9 @@ public class LoginController {
             if (!password.equals(user.getPassword())) {
                 return "ErrorPage";
             }
-            if (user.isEnabled()) {
-                return "ErrorPage";
-            }
+            //if (user.isEnabled()) {
+            //    return "ErrorPage";
+            //}
 
             session.setAttribute("sessionUser", user);
             return "redirect:/feed";

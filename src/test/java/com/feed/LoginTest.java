@@ -147,7 +147,7 @@ public class LoginTest {
         }
     }
 
-    @Test // 이미 로그인되어있는 계정에 중복로그인시 ErrorPage를 제대로 띄우는가
+    @Test // 이미 로그인되어있는 계정에 중복 로그인시 ErrorPage를 제대로 띄우는가
     public void loginOverlap() throws Exception{
         String query;
         try{

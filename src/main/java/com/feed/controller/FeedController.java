@@ -47,12 +47,12 @@ public class FeedController {
         User user = (User)session.getAttribute("sessionUser");
 
         post.setUserId(user.getUserId());
-        postRepository.save(post);
+        //postRepository.save(post);
 
         long posting = user.getPosting();
         posting++;
         user.setPosting(posting);
-        userRepository.save(user);
+        //userRepository.save(user);
 
         return "redirect:/feed";
     }

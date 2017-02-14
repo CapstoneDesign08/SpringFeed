@@ -54,7 +54,7 @@ public class MyPageController {
                 }
             });
 
-            modelMap.put("posts", posts);
+            //modelMap.put("posts", posts);
 
             return "MyPage";
         }

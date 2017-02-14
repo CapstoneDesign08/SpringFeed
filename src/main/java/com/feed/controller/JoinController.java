@@ -22,18 +22,18 @@ public class JoinController {
     public String join(User user) {
 
         if(user.getUserId() != "" && user.getPassword() != ""){
-            if(userRepository.exists(user.getUserId())) {
+            //if(userRepository.exists(user.getUserId())) {
                 // 아이디 중복
-                return "ErrorPage";
-            }
-            else { // 아이디 중복 아님
+                //return "ErrorPage";
+            //}
+            //else { // 아이디 중복 아님
                 user.setEnabled(false);
                 user.setFollower(0l);
                 user.setFollowing(0l);
                 user.setPosting(0l);
-                userRepository.save(user);
+                //userRepository.save(user);
                 return "redirect:/";
-            }
+            //}
         }
         else{
             return "ErrorPage";

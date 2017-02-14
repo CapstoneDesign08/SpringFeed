@@ -47,30 +47,30 @@ public class FollowController {
             long followCnt = user.getFollowing();
             followCnt--;
             user.setFollowing(followCnt);
-            userRepository.save(user);
+            //userRepository.save(user);
 
             User fUser = userRepository.findByUserId(userId);
             followCnt = fUser.getFollower();
             followCnt--;
             fUser.setFollower(followCnt);
-            userRepository.save(fUser);
+            //userRepository.save(fUser);
         }
         else {
             Follow follow = new Follow();
             follow.setFollower(user.getUserId());
             follow.setFollowing(userId);
-            followRepository.save(follow);
+            //followRepository.save(follow);
 
             long followCnt = user.getFollowing();
             followCnt++;
             user.setFollowing(followCnt);
-            userRepository.save(user);
+            //userRepository.save(user);
 
             User fUser = userRepository.findByUserId(userId);
             followCnt = fUser.getFollower();
             followCnt++;
             fUser.setFollower(followCnt);
-            userRepository.save(fUser);
+            //userRepository.save(fUser);
         }
 
         return "redirect:/" + userId;
