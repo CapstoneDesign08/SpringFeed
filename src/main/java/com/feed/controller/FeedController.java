@@ -1,6 +1,5 @@
 package com.feed.controller;
 
-import com.feed.data.FollowRepository;
 import com.feed.data.PostRepository;
 import com.feed.data.UserRepository;
 import com.feed.model.Post;
@@ -24,9 +23,6 @@ public class FeedController {
 
     @Autowired
     private PostRepository postRepository;
-
-    @Autowired
-    private FollowRepository followRepository;
 
     @RequestMapping(value = "/feed")
     public String feedHome(Model model, ModelMap modelMap, HttpServletRequest request) {
