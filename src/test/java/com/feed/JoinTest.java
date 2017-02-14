@@ -19,10 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Properties;
 
 import static org.junit.Assert.assertEquals;
@@ -56,8 +53,13 @@ public class JoinTest {
         username = pro.getProperty("spring.datasource.username");
         password = pro.getProperty("spring.datasource.password");
 
-        conn = DriverManager.getConnection(connectionURL, username, password);
-        stmt = conn.createStatement();
+        try {
+            conn = DriverManager.getConnection(connectionURL, username, password);
+            stmt = conn.createStatement();
+        }
+        catch (SQLException e) {
+            throw new SQLException("$DB가 연결 되지 않았습니다.$");
+        }
 
         Capabilities caps = new DesiredCapabilities();
         ((DesiredCapabilities) caps).setJavascriptEnabled(true);
