@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 import java.util.Properties;
@@ -53,8 +54,13 @@ public class MyPageTest {
         username = pro.getProperty("spring.datasource.username");
         password = pro.getProperty("spring.datasource.password");
 
-        conn = DriverManager.getConnection(connectionURL, username, password);
-        stmt = conn.createStatement();
+        try {
+            conn = DriverManager.getConnection(connectionURL, username, password);
+            stmt = conn.createStatement();
+        }
+        catch (SQLException e) {
+            throw new SQLException("$DB가 연결 되지 않았습니다.$");
+        }
 
         Capabilities caps = new DesiredCapabilities();
         ((DesiredCapabilities) caps).setJavascriptEnabled(true);
