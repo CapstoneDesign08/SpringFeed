@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.feed.MyPageTest" tests="6" skipped="0" failures="1" errors="0" timestamp="2017-02-14T06:28:45" hostname="chan-ThinkPad-T440" time="9.245">
+  <properties/>
+  <testcase name="myPageIdMatching" classname="com.feed.MyPageTest" time="1.39"/>
+  <testcase name="myPageFollowMatching" classname="com.feed.MyPageTest" time="1.273"/>
+  <testcase name="myPagePosting" classname="com.feed.MyPageTest" time="2.36">
+    <failure message="java.lang.AssertionError: $내 포스트와 팔로잉 중인 포스트가 제대로 뜨지 않았습니다.$ expected:&lt;4&gt; but was:&lt;0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: $내 포스트와 팔로잉 중인 포스트가 제대로 뜨지 않았습니다.$ expected:&lt;4&gt; but was:&lt;0&gt;
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:645)
+	at com.feed.MyPageTest.myPagePosting(MyPageTest.java:247)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:105)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:56)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+</failure>
+  </testcase>
+  <testcase name="myPageFeed" classname="com.feed.MyPageTest" time="1.366"/>
+  <testcase name="myPageLogout" classname="com.feed.MyPageTest" time="1.603"/>
+  <testcase name="moveToMyPage" classname="com.feed.MyPageTest" time="1.247"/>
+  <system-out><![CDATA[2017-02-14 15:28:45.123  INFO 3877 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.feed.MyPageTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2017-02-14 15:28:45.128  INFO 3877 --- [    Test worker] WebAppIntegrationTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-02-14 15:28:45.128  INFO 3877 --- [    Test worker] WebAppIntegrationTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4cc8d605, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5be8f71a, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@a82f60e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5eac8bd9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@54de16f7, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@48127b51, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@553dc6db, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6f757de6, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4b38a751, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@102b8594, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2b9b9254, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6f45508c]
+/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed
+2017-02-14 15:28:45.140  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : executable: /media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/src/test/resources/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+2017-02-14 15:28:45.140  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : port: 5358
+2017-02-14 15:28:45.140  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : arguments: [--webdriver=5358, --webdriver-logfile=/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/phantomjsdriver.log]
+2017-02-14 15:28:45.140  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : environment: {}
+Hibernate: select user0_.user_id as user_id1_2_, user0_.follower as follower2_2_, user0_.following as followin3_2_, user0_.is_enabled as is_enabl4_2_, user0_.password as password5_2_, user0_.posting as posting6_2_ from user user0_ where user0_.user_id=?
+Hibernate: select user0_.user_id as user_id1_2_0_, user0_.follower as follower2_2_0_, user0_.following as followin3_2_0_, user0_.is_enabled as is_enabl4_2_0_, user0_.password as password5_2_0_, user0_.posting as posting6_2_0_ from user user0_ where user0_.user_id=?
+Hibernate: update user set follower=?, following=?, is_enabled=?, password=?, posting=? where user_id=?
+Hibernate: select post0_.id as id1_1_, post0_.content as content2_1_, post0_.user_id as user_id3_1_ from post post0_ order by post0_.id desc
+Hibernate: select user0_.user_id as user_id1_2_, user0_.follower as follower2_2_, user0_.following as followin3_2_, user0_.is_enabled as is_enabl4_2_, user0_.password as password5_2_, user0_.posting as posting6_2_ from user user0_ where user0_.user_id=?
+Hibernate: select post0_.id as id1_1_, post0_.content as content2_1_, post0_.user_id as user_id3_1_ from post post0_ where post0_.user_id=?
+Hibernate: select follow0_.id as id1_0_, follow0_.follower as follower2_0_, follow0_.following as followin3_0_ from follow follow0_ where follow0_.follower=?
+/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed
+2017-02-14 15:28:46.528  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : executable: /media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/src/test/resources/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+2017-02-14 15:28:46.529  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : port: 28328
+2017-02-14 15:28:46.529  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : arguments: [--webdriver=28328, --webdriver-logfile=/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/phantomjsdriver.log]
+2017-02-14 15:28:46.529  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : environment: {}
+Hibernate: select user0_.user_id as user_id1_2_, user0_.follower as follower2_2_, user0_.following as followin3_2_, user0_.is_enabled as is_enabl4_2_, user0_.password as password5_2_, user0_.posting as posting6_2_ from user user0_ where user0_.user_id=?
+Hibernate: select user0_.user_id as user_id1_2_0_, user0_.follower as follower2_2_0_, user0_.following as followin3_2_0_, user0_.is_enabled as is_enabl4_2_0_, user0_.password as password5_2_0_, user0_.posting as posting6_2_0_ from user user0_ where user0_.user_id=?
+Hibernate: update user set follower=?, following=?, is_enabled=?, password=?, posting=? where user_id=?
+Hibernate: select post0_.id as id1_1_, post0_.content as content2_1_, post0_.user_id as user_id3_1_ from post post0_ order by post0_.id desc
+Hibernate: select user0_.user_id as user_id1_2_, user0_.follower as follower2_2_, user0_.following as followin3_2_, user0_.is_enabled as is_enabl4_2_, user0_.password as password5_2_, user0_.posting as posting6_2_ from user user0_ where user0_.user_id=?
+Hibernate: select post0_.id as id1_1_, post0_.content as content2_1_, post0_.user_id as user_id3_1_ from post post0_ where post0_.user_id=?
+Hibernate: select follow0_.id as id1_0_, follow0_.follower as follower2_0_, follow0_.following as followin3_0_ from follow follow0_ where follow0_.follower=?
+/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed
+2017-02-14 15:28:47.805  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : executable: /media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/src/test/resources/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+2017-02-14 15:28:47.805  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : port: 28778
+2017-02-14 15:28:47.805  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : arguments: [--webdriver=28778, --webdriver-logfile=/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/phantomjsdriver.log]
+2017-02-14 15:28:47.805  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : environment: {}
+Hibernate: select user0_.user_id as user_id1_2_, user0_.follower as follower2_2_, user0_.following as followin3_2_, user0_.is_enabled as is_enabl4_2_, user0_.password as password5_2_, user0_.posting as posting6_2_ from user user0_ where user0_.user_id=?
+Hibernate: select user0_.user_id as user_id1_2_0_, user0_.follower as follower2_2_0_, user0_.following as followin3_2_0_, user0_.is_enabled as is_enabl4_2_0_, user0_.password as password5_2_0_, user0_.posting as posting6_2_0_ from user user0_ where user0_.user_id=?
+Hibernate: update user set follower=?, following=?, is_enabled=?, password=?, posting=? where user_id=?
+Hibernate: select post0_.id as id1_1_, post0_.content as content2_1_, post0_.user_id as user_id3_1_ from post post0_ order by post0_.id desc
+Hibernate: select user0_.user_id as user_id1_2_, user0_.follower as follower2_2_, user0_.following as followin3_2_, user0_.is_enabled as is_enabl4_2_, user0_.password as password5_2_, user0_.posting as posting6_2_ from user user0_ where user0_.user_id=?
+Hibernate: select post0_.id as id1_1_, post0_.content as content2_1_, post0_.user_id as user_id3_1_ from post post0_ where post0_.user_id=?
+Hibernate: select follow0_.id as id1_0_, follow0_.follower as follower2_0_, follow0_.following as followin3_0_ from follow follow0_ where follow0_.follower=?
+Hibernate: select post0_.id as id1_1_, post0_.content as content2_1_, post0_.user_id as user_id3_1_ from post post0_ where post0_.user_id=?
+/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed
+2017-02-14 15:28:50.166  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : executable: /media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/src/test/resources/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+2017-02-14 15:28:50.166  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : port: 10877
+2017-02-14 15:28:50.166  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : arguments: [--webdriver=10877, --webdriver-logfile=/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/phantomjsdriver.log]
+2017-02-14 15:28:50.166  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : environment: {}
+Hibernate: select user0_.user_id as user_id1_2_, user0_.follower as follower2_2_, user0_.following as followin3_2_, user0_.is_enabled as is_enabl4_2_, user0_.password as password5_2_, user0_.posting as posting6_2_ from user user0_ where user0_.user_id=?
+Hibernate: select user0_.user_id as user_id1_2_0_, user0_.follower as follower2_2_0_, user0_.following as followin3_2_0_, user0_.is_enabled as is_enabl4_2_0_, user0_.password as password5_2_0_, user0_.posting as posting6_2_0_ from user user0_ where user0_.user_id=?
+Hibernate: update user set follower=?, following=?, is_enabled=?, password=?, posting=? where user_id=?
+Hibernate: select post0_.id as id1_1_, post0_.content as content2_1_, post0_.user_id as user_id3_1_ from post post0_ order by post0_.id desc
+Hibernate: select user0_.user_id as user_id1_2_, user0_.follower as follower2_2_, user0_.following as followin3_2_, user0_.is_enabled as is_enabl4_2_, user0_.password as password5_2_, user0_.posting as posting6_2_ from user user0_ where user0_.user_id=?
+Hibernate: select post0_.id as id1_1_, post0_.content as content2_1_, post0_.user_id as user_id3_1_ from post post0_ where post0_.user_id=?
+Hibernate: select follow0_.id as id1_0_, follow0_.follower as follower2_0_, follow0_.following as followin3_0_ from follow follow0_ where follow0_.follower=?
+Hibernate: select user0_.user_id as user_id1_2_0_, user0_.follower as follower2_2_0_, user0_.following as followin3_2_0_, user0_.is_enabled as is_enabl4_2_0_, user0_.password as password5_2_0_, user0_.posting as posting6_2_0_ from user user0_ where user0_.user_id=?
+Hibernate: select post0_.id as id1_1_, post0_.content as content2_1_, post0_.user_id as user_id3_1_ from post post0_ order by post0_.id desc
+/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed
+2017-02-14 15:28:51.532  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : executable: /media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/src/test/resources/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+2017-02-14 15:28:51.532  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : port: 20916
+2017-02-14 15:28:51.532  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : arguments: [--webdriver=20916, --webdriver-logfile=/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/phantomjsdriver.log]
+2017-02-14 15:28:51.532  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : environment: {}
+Hibernate: select user0_.user_id as user_id1_2_, user0_.follower as follower2_2_, user0_.following as followin3_2_, user0_.is_enabled as is_enabl4_2_, user0_.password as password5_2_, user0_.posting as posting6_2_ from user user0_ where user0_.user_id=?
+Hibernate: select user0_.user_id as user_id1_2_0_, user0_.follower as follower2_2_0_, user0_.following as followin3_2_0_, user0_.is_enabled as is_enabl4_2_0_, user0_.password as password5_2_0_, user0_.posting as posting6_2_0_ from user user0_ where user0_.user_id=?
+Hibernate: update user set follower=?, following=?, is_enabled=?, password=?, posting=? where user_id=?
+Hibernate: select post0_.id as id1_1_, post0_.content as content2_1_, post0_.user_id as user_id3_1_ from post post0_ order by post0_.id desc
+Hibernate: select user0_.user_id as user_id1_2_, user0_.follower as follower2_2_, user0_.following as followin3_2_, user0_.is_enabled as is_enabl4_2_, user0_.password as password5_2_, user0_.posting as posting6_2_ from user user0_ where user0_.user_id=?
+Hibernate: select post0_.id as id1_1_, post0_.content as content2_1_, post0_.user_id as user_id3_1_ from post post0_ where post0_.user_id=?
+Hibernate: select follow0_.id as id1_0_, follow0_.follower as follower2_0_, follow0_.following as followin3_0_ from follow follow0_ where follow0_.follower=?
+Hibernate: select user0_.user_id as user_id1_2_0_, user0_.follower as follower2_2_0_, user0_.following as followin3_2_0_, user0_.is_enabled as is_enabl4_2_0_, user0_.password as password5_2_0_, user0_.posting as posting6_2_0_ from user user0_ where user0_.user_id=?
+Hibernate: update user set follower=?, following=?, is_enabled=?, password=?, posting=? where user_id=?
+/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed
+2017-02-14 15:28:53.137  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : executable: /media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/src/test/resources/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+2017-02-14 15:28:53.137  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : port: 7033
+2017-02-14 15:28:53.137  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : arguments: [--webdriver=7033, --webdriver-logfile=/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/phantomjsdriver.log]
+2017-02-14 15:28:53.137  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : environment: {}
+Hibernate: select user0_.user_id as user_id1_2_, user0_.follower as follower2_2_, user0_.following as followin3_2_, user0_.is_enabled as is_enabl4_2_, user0_.password as password5_2_, user0_.posting as posting6_2_ from user user0_ where user0_.user_id=?
+Hibernate: select user0_.user_id as user_id1_2_0_, user0_.follower as follower2_2_0_, user0_.following as followin3_2_0_, user0_.is_enabled as is_enabl4_2_0_, user0_.password as password5_2_0_, user0_.posting as posting6_2_0_ from user user0_ where user0_.user_id=?
+Hibernate: update user set follower=?, following=?, is_enabled=?, password=?, posting=? where user_id=?
+Hibernate: select post0_.id as id1_1_, post0_.content as content2_1_, post0_.user_id as user_id3_1_ from post post0_ order by post0_.id desc
+Hibernate: select user0_.user_id as user_id1_2_, user0_.follower as follower2_2_, user0_.following as followin3_2_, user0_.is_enabled as is_enabl4_2_, user0_.password as password5_2_, user0_.posting as posting6_2_ from user user0_ where user0_.user_id=?
+Hibernate: select post0_.id as id1_1_, post0_.content as content2_1_, post0_.user_id as user_id3_1_ from post post0_ where post0_.user_id=?
+Hibernate: select follow0_.id as id1_0_, follow0_.follower as follower2_0_, follow0_.following as followin3_0_ from follow follow0_ where follow0_.follower=?
+]]></system-out>
+  <system-err><![CDATA[[INFO  - 2017-02-14T06:28:45.238Z] GhostDriver - Main - running on port 5358
+[INFO  - 2017-02-14T06:28:45.303Z] Session [d616d340-f27e-11e6-a701-3d77a98ac4b5] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-02-14T06:28:45.304Z] Session [d616d340-f27e-11e6-a701-3d77a98ac4b5] - page.customHeaders:  - {}
+[INFO  - 2017-02-14T06:28:45.304Z] Session [d616d340-f27e-11e6-a701-3d77a98ac4b5] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-02-14T06:28:45.304Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d616d340-f27e-11e6-a701-3d77a98ac4b5
+[INFO  - 2017-02-14T06:28:46.504Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-02-14T06:28:46.610Z] GhostDriver - Main - running on port 28328
+[INFO  - 2017-02-14T06:28:46.692Z] Session [d6eac510-f27e-11e6-bf97-157a81e835f7] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-02-14T06:28:46.692Z] Session [d6eac510-f27e-11e6-bf97-157a81e835f7] - page.customHeaders:  - {}
+[INFO  - 2017-02-14T06:28:46.692Z] Session [d6eac510-f27e-11e6-bf97-157a81e835f7] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-02-14T06:28:46.692Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d6eac510-f27e-11e6-bf97-157a81e835f7
+[INFO  - 2017-02-14T06:28:47.778Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-02-14T06:28:47.889Z] GhostDriver - Main - running on port 28778
+[INFO  - 2017-02-14T06:28:47.968Z] Session [d7ad78d0-f27e-11e6-8ce6-43d93204521e] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-02-14T06:28:47.968Z] Session [d7ad78d0-f27e-11e6-8ce6-43d93204521e] - page.customHeaders:  - {}
+[INFO  - 2017-02-14T06:28:47.968Z] Session [d7ad78d0-f27e-11e6-8ce6-43d93204521e] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-02-14T06:28:47.968Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d7ad78d0-f27e-11e6-8ce6-43d93204521e
+[INFO  - 2017-02-14T06:28:50.140Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-02-14T06:28:50.250Z] GhostDriver - Main - running on port 10877
+[INFO  - 2017-02-14T06:28:50.333Z] Session [d9160980-f27e-11e6-ac35-732368050ade] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-02-14T06:28:50.333Z] Session [d9160980-f27e-11e6-ac35-732368050ade] - page.customHeaders:  - {}
+[INFO  - 2017-02-14T06:28:50.334Z] Session [d9160980-f27e-11e6-ac35-732368050ade] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-02-14T06:28:50.334Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d9160980-f27e-11e6-ac35-732368050ade
+[INFO  - 2017-02-14T06:28:51.507Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-02-14T06:28:51.610Z] GhostDriver - Main - running on port 20916
+[INFO  - 2017-02-14T06:28:51.694Z] Session [d9e603b0-f27e-11e6-8785-f15cef2e230f] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-02-14T06:28:51.694Z] Session [d9e603b0-f27e-11e6-8785-f15cef2e230f] - page.customHeaders:  - {}
+[INFO  - 2017-02-14T06:28:51.695Z] Session [d9e603b0-f27e-11e6-8785-f15cef2e230f] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-02-14T06:28:51.695Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d9e603b0-f27e-11e6-8785-f15cef2e230f
+[INFO  - 2017-02-14T06:28:53.060Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-02-14T06:28:53.228Z] GhostDriver - Main - running on port 7033
+[INFO  - 2017-02-14T06:28:53.302Z] Session [dadb3920-f27e-11e6-8071-69a9f6039007] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-02-14T06:28:53.302Z] Session [dadb3920-f27e-11e6-8071-69a9f6039007] - page.customHeaders:  - {}
+[INFO  - 2017-02-14T06:28:53.302Z] Session [dadb3920-f27e-11e6-8071-69a9f6039007] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-02-14T06:28:53.302Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: dadb3920-f27e-11e6-8071-69a9f6039007
+[INFO  - 2017-02-14T06:28:54.307Z] ShutdownReqHand - _handle - About to shutdown
+]]></system-err>
+</testsuite>

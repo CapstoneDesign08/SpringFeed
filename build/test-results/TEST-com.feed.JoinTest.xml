@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.feed.JoinTest" tests="5" skipped="0" failures="2" errors="0" timestamp="2017-02-14T06:28:36" hostname="chan-ThinkPad-T440" time="4.118">
+  <properties/>
+  <testcase name="joinTest" classname="com.feed.JoinTest" time="1.072"/>
+  <testcase name="moveToJoinTest" classname="com.feed.JoinTest" time="0.516"/>
+  <testcase name="joinOverlap" classname="com.feed.JoinTest" time="0.974">
+    <failure message="org.junit.ComparisonFailure: $에러페이지가 호출되지 않았습니다.$ expected:&lt;[Error]&gt; but was:&lt;[로그인]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: $에러페이지가 호출되지 않았습니다.$ expected:&lt;[Error]&gt; but was:&lt;[로그인]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at com.feed.JoinTest.joinOverlap(JoinTest.java:176)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:105)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:56)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+</failure>
+  </testcase>
+  <testcase name="joinDBTest" classname="com.feed.JoinTest" time="0.963">
+    <failure message="java.sql.SQLException: Illegal operation on empty result set." type="java.sql.SQLException">java.sql.SQLException: Illegal operation on empty result set.
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:964)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:897)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:886)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:860)
+	at com.mysql.jdbc.ResultSetImpl.checkRowPos(ResultSetImpl.java:790)
+	at com.mysql.jdbc.ResultSetImpl.getStringInternal(ResultSetImpl.java:5228)
+	at com.mysql.jdbc.ResultSetImpl.getString(ResultSetImpl.java:5151)
+	at com.feed.JoinTest.joinDBTest(JoinTest.java:147)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:105)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:56)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:64)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:50)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.messaging.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.messaging.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.messaging.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:360)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:54)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:40)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+</failure>
+  </testcase>
+  <testcase name="joinBackBtnTest" classname="com.feed.JoinTest" time="0.59"/>
+  <system-out><![CDATA[2017-02-14 15:28:36.814  INFO 3877 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.feed.JoinTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2017-02-14 15:28:36.821  INFO 3877 --- [    Test worker] WebAppIntegrationTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-02-14 15:28:36.822  INFO 3877 --- [    Test worker] WebAppIntegrationTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4345add4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1c94d53d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1e8c3926, org.springframework.test.context.support.DirtiesContextTestExecutionListener@4430c878, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2a75f627, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@10f2e369, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6f48ad58, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2d79cbc1, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@28b8d487, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2fd68352, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@55ec99d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@661a3d34]
+/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed
+2017-02-14 15:28:36.836  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : executable: /media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/src/test/resources/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+2017-02-14 15:28:36.837  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : port: 30312
+2017-02-14 15:28:36.837  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : arguments: [--webdriver=30312, --webdriver-logfile=/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/phantomjsdriver.log]
+2017-02-14 15:28:36.837  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : environment: {}
+/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed
+2017-02-14 15:28:37.907  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : executable: /media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/src/test/resources/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+2017-02-14 15:28:37.907  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : port: 29158
+2017-02-14 15:28:37.907  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : arguments: [--webdriver=29158, --webdriver-logfile=/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/phantomjsdriver.log]
+2017-02-14 15:28:37.907  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : environment: {}
+/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed
+2017-02-14 15:28:38.422  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : executable: /media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/src/test/resources/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+2017-02-14 15:28:38.422  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : port: 25570
+2017-02-14 15:28:38.422  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : arguments: [--webdriver=25570, --webdriver-logfile=/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/phantomjsdriver.log]
+2017-02-14 15:28:38.422  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : environment: {}
+/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed
+2017-02-14 15:28:39.398  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : executable: /media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/src/test/resources/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+2017-02-14 15:28:39.398  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : port: 2603
+2017-02-14 15:28:39.398  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : arguments: [--webdriver=2603, --webdriver-logfile=/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/phantomjsdriver.log]
+2017-02-14 15:28:39.398  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : environment: {}
+/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed
+2017-02-14 15:28:40.364  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : executable: /media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/src/test/resources/phantomjs-2.1.1-linux-x86_64/bin/phantomjs
+2017-02-14 15:28:40.364  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : port: 26168
+2017-02-14 15:28:40.364  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : arguments: [--webdriver=26168, --webdriver-logfile=/media/chan/EECE76F1CE76B207/Users/user/IdeaProjects/SpringFeed/phantomjsdriver.log]
+2017-02-14 15:28:40.364  INFO 3877 --- [    Test worker] o.o.s.phantomjs.PhantomJSDriverService   : environment: {}
+]]></system-out>
+  <system-err><![CDATA[[INFO  - 2017-02-14T06:28:36.923Z] GhostDriver - Main - running on port 30312
+[INFO  - 2017-02-14T06:28:37.009Z] Session [d124cdb0-f27e-11e6-b997-27d9b16b1b64] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-02-14T06:28:37.010Z] Session [d124cdb0-f27e-11e6-b997-27d9b16b1b64] - page.customHeaders:  - {}
+[INFO  - 2017-02-14T06:28:37.010Z] Session [d124cdb0-f27e-11e6-b997-27d9b16b1b64] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-02-14T06:28:37.010Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d124cdb0-f27e-11e6-b997-27d9b16b1b64
+[INFO  - 2017-02-14T06:28:37.878Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-02-14T06:28:37.987Z] GhostDriver - Main - running on port 29158
+[INFO  - 2017-02-14T06:28:38.075Z] Session [d1c79d60-f27e-11e6-9166-ef18f281866d] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-02-14T06:28:38.075Z] Session [d1c79d60-f27e-11e6-9166-ef18f281866d] - page.customHeaders:  - {}
+[INFO  - 2017-02-14T06:28:38.075Z] Session [d1c79d60-f27e-11e6-9166-ef18f281866d] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-02-14T06:28:38.076Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d1c79d60-f27e-11e6-9166-ef18f281866d
+[INFO  - 2017-02-14T06:28:38.347Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-02-14T06:28:38.513Z] GhostDriver - Main - running on port 25570
+[INFO  - 2017-02-14T06:28:38.586Z] Session [d215e470-f27e-11e6-8ce5-0bd446befb01] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-02-14T06:28:38.586Z] Session [d215e470-f27e-11e6-8ce5-0bd446befb01] - page.customHeaders:  - {}
+[INFO  - 2017-02-14T06:28:38.586Z] Session [d215e470-f27e-11e6-8ce5-0bd446befb01] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-02-14T06:28:38.587Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d215e470-f27e-11e6-8ce5-0bd446befb01
+[INFO  - 2017-02-14T06:28:39.371Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-02-14T06:28:39.481Z] GhostDriver - Main - running on port 2603
+[INFO  - 2017-02-14T06:28:39.563Z] Session [d2aaaa60-f27e-11e6-b2e7-070209403f45] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-02-14T06:28:39.563Z] Session [d2aaaa60-f27e-11e6-b2e7-070209403f45] - page.customHeaders:  - {}
+[INFO  - 2017-02-14T06:28:39.564Z] Session [d2aaaa60-f27e-11e6-b2e7-070209403f45] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-02-14T06:28:39.564Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d2aaaa60-f27e-11e6-b2e7-070209403f45
+[INFO  - 2017-02-14T06:28:40.286Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2017-02-14T06:28:40.445Z] GhostDriver - Main - running on port 26168
+[INFO  - 2017-02-14T06:28:40.527Z] Session [d33e10c0-f27e-11e6-b031-c1ea250b6039] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-02-14T06:28:40.528Z] Session [d33e10c0-f27e-11e6-b031-c1ea250b6039] - page.customHeaders:  - {}
+[INFO  - 2017-02-14T06:28:40.528Z] Session [d33e10c0-f27e-11e6-b031-c1ea250b6039] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-02-14T06:28:40.528Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d33e10c0-f27e-11e6-b031-c1ea250b6039
+[INFO  - 2017-02-14T06:28:40.927Z] ShutdownReqHand - _handle - About to shutdown
+]]></system-err>
+</testsuite>
